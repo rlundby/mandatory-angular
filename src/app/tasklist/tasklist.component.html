@@ -1,0 +1,11 @@
+<div class="header">
+  {{ statusType }}
+</div>
+
+<!-- Markup for displaying all tasks that have the status type of this list set... -->
+<task
+  *ngFor="let task of taskList"
+  [task]="task"
+>
+
+</task>

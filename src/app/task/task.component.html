@@ -1,0 +1,21 @@
+<div class="task">
+  <div class="header">
+      <div>
+        {{ task.title }}
+      </div>
+    <select
+      name="taskStatusSelector"
+      id="taskStatusSelector"
+      ngModel="{{task.status}}"
+      #taskStatusSelector="ngModel"
+      ng-init="option[2]"
+
+    >
+      <option *ngFor="let statusType of statusTypes" (click)="updateTask(taskStatusSelector.value)">{{statusType}}</option>
+    </select>
+  </div>
+  <hr>
+  <div class="body">
+    {{ task.description }}
+  </div>
+</div>
