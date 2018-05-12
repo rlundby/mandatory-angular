@@ -11,10 +11,6 @@ export class TaskboardComponent {
 
  statusTypes = this.utilService.getStatusTypes();
 
-  NotStarted = StatusType.NotStarted;
-  InProgress = StatusType.InProgress;
-  Completed = StatusType.Completed;
-
   addNewTask = false;
 
   handleTaskAdded(event) {

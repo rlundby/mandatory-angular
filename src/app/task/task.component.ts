@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {StatusType} from '../constants';
 import {Subscription} from 'rxjs/Subscription';
 import {TaskService} from '../task.service';
+import {UtilService} from '../util.service';
 
 @Component({
   selector: 'task',
@@ -12,11 +13,13 @@ export class TaskComponent {
   @Input() task;
   @Output() changedStatus = new EventEmitter();
 
-  statusTypes = ['Not Started', 'In Progress', 'Completed'];
+  statusTypes = this.utilService.getStatusTypes();
+  constructor(private utilService: UtilService) {}
 
-  updateTask (status) {
-    this.taskService.updateTask(this.task.id, status);
+  updateTask(newStatus) {
+  this.task.status = newStatus;
+  this.changedStatus.emit(this.task);
   }
-
-  constructor(private taskService: TaskService) {}
 }
+
+

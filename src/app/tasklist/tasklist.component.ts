@@ -27,4 +27,8 @@ export class TasklistComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  updateTask (task) {
+    this.taskService.updateTask(task.id, task.status);
+  }
+
 }

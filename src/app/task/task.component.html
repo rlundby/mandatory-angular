@@ -1,7 +1,12 @@
-<div class="task">
+<div
+  class="task"
+  [class.notStarted]="task.status == 'Not Started'"
+  [class.inProgress]="task.status == 'In Progress'"
+  [class.completed]="task.status == 'Completed'"
+>
   <div class="header">
       <div>
-        {{ task.title }}
+        <h3>{{ task.title }}</h3>
       </div>
     <select
       name="taskStatusSelector"
@@ -16,6 +21,6 @@
   </div>
   <hr>
   <div class="body">
-    {{ task.description }}
+    "{{ task.description }}"
   </div>
 </div>

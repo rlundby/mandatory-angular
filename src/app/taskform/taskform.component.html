@@ -2,6 +2,7 @@
 <form
   (ngSubmit)="addTask(f.value); f.reset()"
   #f="ngForm"
+  class="newTask"
   >
 
   <!-- Apply ngModel to this input... -->
@@ -39,6 +40,7 @@
   <button
     type="submit"
     [disabled]="!f.valid"
+    class="btn btn-success saveBtn"
   >
       Save
   </button>
