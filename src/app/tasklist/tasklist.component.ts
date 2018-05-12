@@ -28,7 +28,11 @@ export class TasklistComponent implements OnInit, OnDestroy {
   }
 
   updateTask (task) {
-    this.taskService.updateTask(task.id, task.status);
+    if (task.status === 'delete') {
+      this.taskService.deleteTask(task.id);
+    } else {
+      this.taskService.updateTask(task.id, task.status);
+    }
   }
 
 }

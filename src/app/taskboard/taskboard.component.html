@@ -1,6 +1,5 @@
 <div class="board">
 
-  <!-- Add click event binding for this button... -->
   <button
     style="margin: 20px 0"
     (click)="addNewTask = !addNewTask;"
@@ -15,15 +14,5 @@
 
   <div class="lists">
     <task-list *ngFor="let statusType of statusTypes" [statusType]="statusType"></task-list>
-    <!--<task-list-->
-    <!--[statusType]='NotStarted'-->
-    <!--&gt;-->
-    <!--</task-list>-->
-    <!--<task-list-->
-      <!--[statusType]='InProgress'-->
-    <!--&gt;</task-list>-->
-    <!--<task-list-->
-      <!--[statusType]='Completed'-->
-    <!--&gt;</task-list>-->
   </div>
 </div>

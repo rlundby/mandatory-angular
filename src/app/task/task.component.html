@@ -23,4 +23,13 @@
   <div class="body">
     "{{ task.description }}"
   </div>
+  <div
+    class="footer"
+    *ngIf="task.status == 'Completed'"
+  >
+    <button
+      class="btn btn-danger btn-sm"
+      (click)="updateTask('delete')"
+    >Remove completed task?</button>
+  </div>
 </div>

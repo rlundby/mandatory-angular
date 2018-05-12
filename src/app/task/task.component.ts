@@ -20,6 +20,7 @@ export class TaskComponent {
   this.task.status = newStatus;
   this.changedStatus.emit(this.task);
   }
+
 }
 
 
